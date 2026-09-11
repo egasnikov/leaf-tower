@@ -244,11 +244,11 @@ footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:11.5px;col
 </div></section>
 
 <section class="sec"><h2>Sensitivity - Investor IRR</h2><div class="body">
-  <div class="galsub">Desk rate - single-variable sensitivity (all other inputs as set)</div>
+  <div class="galsub">Desk rate AED 3,500 to 5,000 - single-variable sensitivity (all other inputs as set)</div>
   <div class="tscroll"><table class="sensi" id="sDesk"></table></div>
   <div class="grid2" style="margin-top:20px">
     <div><div class="galsub">Desk rate vs stabilised occupancy</div><div class="tscroll"><table class="sensi" id="sRentOcc"></table></div></div>
-    <div><div class="galsub">Head rent per sqm vs desk rate</div><div class="tscroll"><table class="sensi" id="sHrRent"></table></div></div>
+    <div><div class="galsub">Desk rate vs lease term</div><div class="tscroll"><table class="sensi" id="sHrRent"></table></div></div>
   </div>
   <div class="grid2" style="margin-top:20px">
     <div><div class="galsub">Investor share of NOI vs fit-out cost</div><div class="tscroll"><table class="sensi" id="sSplitCapex"></table></div></div>
@@ -445,7 +445,7 @@ function render(){
   // charts
   drawBars(yrs); drawCum(R.lp);
   // sensitivities
-  const dset=[-500,-300,-100,0,100,300,500,800].map(d=>p.rent+d);
+  const dset=[3500,3750,4000,4250,4500,4750,5000]; if(!dset.includes(p.rent)){dset.push(p.rent);dset.sort((a,b)=>a-b);}
   let dh='<tr><th>AED, desk rate / month</th>'+dset.map(r=>'<th>'+fmt(r)+'</th>').join('')+'</tr>';
   const dres=dset.map(r=>engine(Object.assign({},p,{rent:r})));
   const drow=(label,f,cls)=>'<tr'+(cls?' class="'+cls+'"':'')+'><td>'+label+'</td>'+dres.map((R2,i)=>'<td class="'+(dset[i]===p.rent?'base':'')+'">'+f(R2,dset[i])+'</td>').join('')+'</tr>';
@@ -461,13 +461,13 @@ function render(){
   dh+=drow('Project IRR pre-split',R2=>pct(R2.pirr));
   dh+=drow('Operator total, term',R2=>fm(R2.gpTotal).replace('AED ',''));
   $('sDesk').innerHTML=dh;
-  const rates=[-500,-250,0,250,500].map(d=>p.rent+d), occs=[80,85,90,95,100];
+  const rates=[3500,3750,4000,4250,4500,4750,5000], occs=[80,85,90,95,100]; if(!rates.includes(p.rent)){rates.push(p.rent);rates.sort((a,b)=>a-b);}
   let h='<tr><th>Occ \\ Rate</th>'+rates.map(r=>'<th>'+fmt(r)+'</th>').join('')+'</tr>';
   occs.forEach(o=>{h+='<tr><td>'+o+'%</td>'+rates.map(r=>{const v=engine(Object.assign({},p,{rent:r,occ:o})).irr;return cell(v,r===p.rent&&o===p.occ);}).join('')+'</tr>';});
   $('sRentOcc').innerHTML=h;
-  const hrs=[2000,2500,3000,3500,4000]; if(!hrs.includes(p.hr)){hrs.push(p.hr);hrs.sort((a,b)=>a-b);}
-  h='<tr><th>Head rent \\ Rate</th>'+rates.map(r=>'<th>'+fmt(r)+'</th>').join('')+'</tr>';
-  hrs.forEach(x=>{h+='<tr><td>AED '+fmt(x)+'/sqm</td>'+rates.map(r=>cell(engine(Object.assign({},p,{rent:r,hr:x})).irr,r===p.rent&&x===p.hr)).join('')+'</tr>';});
+  const terms=[7,8,9,10];
+  h='<tr><th>Term \\ Rate</th>'+rates.map(r=>'<th>'+fmt(r)+'</th>').join('')+'</tr>';
+  terms.forEach(x=>{h+='<tr><td>'+x+' years</td>'+rates.map(r=>cell(engine(Object.assign({},p,{rent:r,term:x,exitY:Math.min(p.exitY,x-1)})).irr,r===p.rent&&x===p.term)).join('')+'</tr>';});
   $('sHrRent').innerHTML=h;
   const splits=[60,70,80,90,100], cps=[350,450,550,650,750];
   h='<tr><th>Split \\ Fit-out</th>'+cps.map(c=>'<th>'+c+'/sq ft</th>').join('')+'</tr>';
