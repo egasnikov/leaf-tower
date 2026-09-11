@@ -93,7 +93,12 @@ main .wrap>div{min-width:0}.grid2>div{min-width:0}
 .gcard img{width:100%;height:100%;object-fit:cover;display:block}
 .gtag{position:absolute;top:8px;left:8px;background:var(--teal);color:#fff;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;font-weight:700}
 .gcap{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;background:linear-gradient(to top,rgba(5,28,44,.85),rgba(5,28,44,0));color:#fff;font-size:12px}
-@media (max-width:980px){.gal{grid-template-columns:1fr 1fr}}
+@media (max-width:980px){.gal{grid-template-columns:1fr 1fr}.vid{grid-template-columns:1fr}}
+.vid{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-top:12px;align-items:stretch}
+.vid .frame{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:var(--navy)}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid .vtext{border:1px solid var(--line);border-radius:6px;padding:14px;font-size:13px;line-height:1.55}
+.vid .vtext a{color:var(--teal);font-weight:600;text-decoration:none}
 footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:11.5px;color:var(--muted);line-height:1.6}
 @media (max-width:980px){main .wrap{grid-template-columns:1fr}.controls{position:static;max-height:none}.kpis .wrap{grid-template-columns:repeat(4,1fr)}.grid2{grid-template-columns:1fr}.cards,.conv{grid-template-columns:1fr 1fr}}
 @media print{.controls{display:none}main .wrap{grid-template-columns:1fr}.kpis{position:static}}
@@ -124,7 +129,11 @@ footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:11.5px;col
     <div class="gcard"><img src="https://static.shared.propertyfinder.ae/media/images/listing/8VRVWG9V8M27QWCPGQGEKXMQXW/23dc447b-c7b0-4ec3-a1ef-90342b56bf49/1312x894.jpg?v=2fc6b19dde62f0bf73c102e9b2bca2f3" alt="Rooftop skylight" loading="lazy" onerror="this.parentNode.style.display='none'"><span class="gtag">Rooftop</span><div class="gcap">Skylight roof structure - daylight across the whole floor</div></div>
     <div class="gcard"><img src="https://static.shared.propertyfinder.ae/media/images/listing/8VRVWG9V8M27QWCPGQGEKXMQXW/b79e5cae-99cb-48a0-ad7b-686eefc4696e/1312x894.jpg?v=1077880cfc5cf186f541dfeaecf093dd" alt="Ground floor lobby" loading="lazy" onerror="this.parentNode.style.display='none'"><span class="gtag">Lobby</span><div class="gcap">Ground-floor lobby and lift core serving the floor</div></div>
   </div>
-  <p class="galnote">Listing photographs, landlord-direct (Property Finder 106411896, September 2026). The floor is offered shell and core; the model carries a full fit-out at AED 550 / sq ft.</p>
+  <div class="vid">
+    <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/UE663IuoY8o?rel=0" title="Leaf Tower - Roof - Commercial (MAAM Properties)" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+    <div class="vtext"><div class="galsub" style="margin-bottom:6px">Video tour</div><b>Leaf Tower - Roof - Commercial</b><br>Landlord walk-through of the Level 58 floor: the curved glazed perimeter, the skylight roof and the views over Reem and Maryah.<br><br><a href="https://www.youtube.com/watch?v=UE663IuoY8o" target="_blank" rel="noopener">Open on YouTube &rarr;</a><br><span style="color:var(--muted);font-size:11.5px">MAAM Properties channel</span></div>
+  </div>
+  <p class="galnote">Listing photographs and video, landlord-direct (Property Finder 106411896, September 2026). The floor is offered shell and core; the model carries a full fit-out at AED 550 / sq ft.</p>
 </div></section>
 
 <section class="galband" style="background:#F4F6F8"><div class="wrap">
