@@ -88,6 +88,12 @@ main .wrap>div{min-width:0}.grid2>div{min-width:0}
 .pill{display:inline-block;background:var(--navy);color:#fff;font-size:10.5px;letter-spacing:.8px;padding:2px 8px;border-radius:3px;margin-left:6px}
 .conv{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:10px 0 14px}
 .conv .card .irr{font-size:20px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.gcard{position:relative;border-radius:6px;overflow:hidden;background:var(--band);aspect-ratio:3/2}
+.gcard img{width:100%;height:100%;object-fit:cover;display:block}
+.gtag{position:absolute;top:8px;left:8px;background:var(--teal);color:#fff;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:2px;font-weight:700}
+.gcap{position:absolute;left:0;right:0;bottom:0;padding:22px 10px 8px;background:linear-gradient(to top,rgba(5,28,44,.85),rgba(5,28,44,0));color:#fff;font-size:12px}
+@media (max-width:980px){.gal{grid-template-columns:1fr 1fr}}
 footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:11.5px;color:var(--muted);line-height:1.6}
 @media (max-width:980px){main .wrap{grid-template-columns:1fr}.controls{position:static;max-height:none}.kpis .wrap{grid-template-columns:repeat(4,1fr)}.grid2{grid-template-columns:1fr}.cards,.conv{grid-template-columns:1fr 1fr}}
 @media print{.controls{display:none}main .wrap{grid-template-columns:1fr}.kpis{position:static}}
@@ -107,8 +113,19 @@ footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:11.5px;col
   <div class="kpi"><div class="v" id="kDist"></div><div class="l">Investor Distributions (AED)</div><div class="d" id="dDist"></div></div>
   <div class="kpi"><div class="v" id="kProj"></div><div class="l">Project IRR &middot; pre-split</div><div class="d" id="dProj"></div></div>
   <div class="kpi"><div class="v" id="kMargin"></div><div class="l">Stabilised NOI Margin</div><div class="d" id="dMargin"></div></div>
-  <div class="kpi"><div class="v" id="kPsm"></div><div class="l">Price / sqm suite / yr</div><div class="d" id="dPsm"></div></div>
+  <div class="kpi"><div class="v" id="kPsm"></div><div class="l">Price / sqm floor / yr</div><div class="d" id="dPsm"></div></div>
 </div></div>
+
+<section class="galband"><div class="wrap">
+  <div class="galsub">The Floor - Level 58, Leaf Tower</div>
+  <div class="gal">
+    <div class="gcard"><img src="https://static.shared.propertyfinder.ae/media/images/listing/8VRVWG9V8M27QWCPGQGEKXMQXW/861a363e-0637-4d2e-98a9-24fd049e5d28/1312x894.jpg?v=8606df8cbef21bdb727b610afa35b565" alt="Leaf Tower, Al Reem Island" loading="lazy" onerror="this.parentNode.style.display='none'"><span class="gtag">The tower</span><div class="gcap">Leaf Tower, Al Reem Island - the offered floor is the glazed crown</div></div>
+    <div class="gcard"><img src="https://static.shared.propertyfinder.ae/media/images/listing/8VRVWG9V8M27QWCPGQGEKXMQXW/2d32a284-5f6f-48d2-99b8-7427ae2f6901/1312x894.jpg?v=9f3864b96192ff1bfdd2535e5d03eeac" alt="Level 58 floor plate" loading="lazy" onerror="this.parentNode.style.display='none'"><span class="gtag">Level 58</span><div class="gcap">Curved full-height glazing on the 2,500 sqm plate, shell and core as offered</div></div>
+    <div class="gcard"><img src="https://static.shared.propertyfinder.ae/media/images/listing/8VRVWG9V8M27QWCPGQGEKXMQXW/23dc447b-c7b0-4ec3-a1ef-90342b56bf49/1312x894.jpg?v=2fc6b19dde62f0bf73c102e9b2bca2f3" alt="Rooftop skylight" loading="lazy" onerror="this.parentNode.style.display='none'"><span class="gtag">Rooftop</span><div class="gcap">Skylight roof structure - daylight across the whole floor</div></div>
+    <div class="gcard"><img src="https://static.shared.propertyfinder.ae/media/images/listing/8VRVWG9V8M27QWCPGQGEKXMQXW/b79e5cae-99cb-48a0-ad7b-686eefc4696e/1312x894.jpg?v=1077880cfc5cf186f541dfeaecf093dd" alt="Ground floor lobby" loading="lazy" onerror="this.parentNode.style.display='none'"><span class="gtag">Lobby</span><div class="gcap">Ground-floor lobby and lift core serving the floor</div></div>
+  </div>
+  <p class="galnote">Listing photographs, landlord-direct (Property Finder 106411896, September 2026). The floor is offered shell and core; the model carries a full fit-out at AED 550 / sq ft.</p>
+</div></section>
 
 <section class="galband" style="background:#F4F6F8"><div class="wrap">
   <div class="galsub">Executive Summary</div>
@@ -127,13 +144,13 @@ footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:11.5px;col
     <div class="hint" id="hHr"></div></div>
   <div class="ctl"><div class="row"><label>Lease Term</label><span class="val" id="vTerm"></span></div>
     <div class="seg" id="segTerm"><button data-v="7">7 yrs</button><button data-v="8">8 yrs</button><button data-v="9">9 yrs</button><button data-v="10" class="on">10 yrs</button></div>
-    <div class="hint">Landlord offer: 7-10 year term with 6 months rent-free during construction.</div></div>
+    <div class="hint">Landlord offer: 7-10 year term with rent-free during construction (base case 7 months).</div></div>
   <div class="ctl"><div class="row"><label>Rent-Free Period</label><span class="val" id="vRf"></span></div>
-    <input type="range" id="iRf" min="0" max="12" step="1" value="6">
+    <input type="range" id="iRf" min="0" max="12" step="1" value="7">
     <div class="hint" id="hRf"></div></div>
   <div class="ctl"><div class="row"><label>Head Rent Escalation</label><span class="val" id="vHesc"></span></div>
-    <input type="range" id="iHesc" min="0" max="5" step="0.5" value="0">
-    <div class="hint">0% = rent fixed for the term. Abu Dhabi landlords typically seek 3-5% at review; test it here.</div></div>
+    <input type="range" id="iHesc" min="0" max="5" step="0.5" value="5">
+    <div class="hint">Base case 5% a year, matching the desk-rate escalation. Set to 0% to test a fixed rent for the term.</div></div>
   <div class="ctl"><div class="row"><label>Service Charge / sq ft / yr</label><span class="val" id="vSc"></span></div>
     <input type="range" id="iSc" min="0" max="35" step="1" value="18">
     <div class="hint" id="hSc"></div></div>
@@ -145,11 +162,11 @@ footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:11.5px;col
     <input type="range" id="iCapex" min="200" max="800" step="10" value="550">
     <div class="hint" id="hCapex"></div></div>
   <div class="ctl"><div class="row"><label>Fit-out Period</label><span class="val" id="vFit"></span></div>
-    <input type="range" id="iFit" min="3" max="12" step="1" value="9">
+    <input type="range" id="iFit" min="3" max="12" step="1" value="7">
     <div class="hint" id="hFit"></div></div>
   <div class="subhdr">Commercial levers</div>
   <div class="ctl"><div class="row"><label>Rent / Desk / Month (Y1)</label><span class="val" id="vRent"></span></div>
-    <input type="range" id="iRent" min="2500" max="5500" step="25" value="3500">
+    <input type="range" id="iRent" min="2500" max="5500" step="25" value="4000">
     <div class="hint" id="hRentSqm" style="color:var(--navy);font-weight:600"></div>
     <div class="hint" id="hRentSuite"></div></div>
   <div class="ctl"><div class="row"><label>Lettable sqm per Desk</label><span class="val" id="vDens"></span></div>
@@ -241,22 +258,18 @@ footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:11.5px;col
 </div></section>
 
 <section class="sec"><h2>Pricing - What to Charge per sqm at Leaf Tower</h2><div class="body">
-  <div class="galsub">Three pricing conventions for the same product</div>
-  <div class="conv">
+  <div class="galsub">Pricing conventions for the same product - all on the 2,500 sqm lettable floor</div>
+  <div class="conv" style="grid-template-columns:repeat(3,1fr)">
     <div class="card"><div class="y">Per desk / month</div><div class="irr" id="pDesk"></div><small id="pDeskS"></small></div>
-    <div class="card"><div class="y">Per sqm lettable floor / yr</div><div class="irr" id="pGross"></div><small>Sky Tower memo convention: whole lettable floor incl. reception, meeting rooms and corridors</small></div>
-    <div class="card on"><div class="y">Per sqm suite area / yr</div><div class="irr" id="pSuite"></div><small id="pSuiteS"></small></div>
-    <div class="card"><div class="y">Per sq ft suite area / yr</div><div class="irr" id="pSuiteSf"></div><small>For brokers who quote in sq ft</small></div>
+    <div class="card on"><div class="y">Per sqm floor / yr</div><div class="irr" id="pGross"></div><small>All-inclusive on the lettable floor - reception, meeting rooms, pantry and corridors are part of the product, not a separate charge</small></div>
+    <div class="card"><div class="y">Per sq ft floor / yr</div><div class="irr" id="pGrossSf"></div><small>For brokers who quote in sq ft</small></div>
   </div>
-  <div class="ctl" style="border:1px solid var(--line);border-radius:6px;margin-bottom:14px"><div class="row"><label>Suite efficiency (private suite area as % of lettable floor)</label><span class="val" id="vEff"></span></div>
-    <input type="range" id="iEff" min="55" max="85" step="1" value="70">
-    <div class="hint">The balance is reception, boardrooms, meeting rooms, pantry, corridors and services - included in the all-inclusive price, not charged separately.</div></div>
 
   <div class="reco" id="recoBox"></div>
 
   <div style="margin-top:18px">
     <div><div class="galsub">ADGM and Al Reem operator ladder (retrieved Aug-Sep 2026)</div><div class="tscroll"><table id="tLadder"></table></div>
-      <p class="note">Per-sqm equivalents use the operator's stated suite size where published (Cloud Spaces) or a 5 sqm per person internal density for fully serviced private offices (TEC, Regus, Servcorp). Coworking hot desks are not comparable to a private suite and are shown for completeness only.</p></div>
+      <p class="note">Per-sqm equivalents for the ADGM operators use the operator's stated suite size where published (Cloud Spaces) or a 5 sqm per person internal density (TEC, Regus, Servcorp), so they sit on a suite basis and read high against this model's lettable-floor figure. Radiant Square and Sky Tower comps are on the leased area as listed. Coworking hot desks are not comparable and are shown for completeness only.</p></div>
     <div style="margin-top:18px"><div class="galsub">What the tenant pays if they do it themselves (AED / sqm / yr)</div><div class="tscroll"><table id="tDiy"></table></div>
       <p class="note">Conventional space on Al Reem: Sky Tower asks AED 1,350-2,500/sqm (125-231/sq ft), Tamouh Tower fitted 1,280-1,670/sqm, Grade A shell at Addax and Omega 600-1,030/sqm; Leaf Tower L58 is asked at AED 3,000/sqm (Sep 2026, Property Finder). The DIY stack assumes the tenant takes this floor at the landlord's ask and uses the same fit-out basis as this model, amortised over 5 years.</p></div>
   </div>
@@ -266,14 +279,14 @@ footer{border-top:1px solid var(--line);padding:18px 0 40px;font-size:11.5px;col
 </div></main>
 
 <footer><div class="wrap">
-  <b style="color:var(--navy)">Method and assumptions.</b> Monthly engine, 2,500 sqm lettable area as stated by the landlord (26,910 sq ft; building common areas excluded, unit-internal reception, meeting rooms and corridors included), Leaf Tower Level 58, Al Reem Island (ADGM jurisdiction). Head lease at AED 7.5M a year (AED 3,000/sqm), 6 months rent-free from handover, rent fixed for the term in the base case (escalation adjustable), service charge from day one, security deposit returned at term end. Fit-out AED 550/sq ft plus 5% contingency over 9 months; 5% VAT on fit-out funded at closing and recovered in lease year 1. Set-up, legal and launch marketing AED 690,000. Two months of pre-opening payroll. Trading opens at 60% of capacity desks, rising 5 points a month to stabilisation; 1% credit loss. Core operating costs AED 123,000 a month at 2026 prices (payroll, utilities, pantry, maintenance, insurance and admin, scaled by area from the Sky Tower Floor 38 budget), 3% escalation; licence AED 50,000 a year. Leasing commission 10% of contracted annual rent on origination and each 3-year renewal. Operator: 5% management fee on collected revenue (Sky Tower negotiated set), then a 70/30 investor/operator split on each year's positive NOI (no loss carry-forward); the investor funds any negative year through a working-capital reserve sized at closing. Returns are pre-tax and unlevered; no residual value is assumed at lease expiry unless the optional business-sale control is switched on.<br><br>
+  <b style="color:var(--navy)">Method and assumptions.</b> Monthly engine, 2,500 sqm lettable area as stated by the landlord (26,910 sq ft; building common areas excluded, unit-internal reception, meeting rooms and corridors included), Leaf Tower Level 58, Al Reem Island (ADGM jurisdiction). Head lease at AED 7.5M a year (AED 3,000/sqm), 7 months rent-free from handover, 5% annual escalation on the head rent and on the desk rate, service charge from day one, security deposit returned at term end. Fit-out AED 550/sq ft plus 5% contingency over 7 months; 5% VAT on fit-out funded at closing and recovered in lease year 1. Set-up, legal and launch marketing AED 690,000. Two months of pre-opening payroll. Trading opens at 60% of capacity desks, rising 5 points a month to stabilisation; 1% credit loss. Core operating costs AED 123,000 a month at 2026 prices (payroll, utilities, pantry, maintenance, insurance and admin, scaled by area from the Sky Tower Floor 38 budget), 3% escalation; licence AED 50,000 a year. Leasing commission 10% of contracted annual rent on origination and each 3-year renewal. Operator: 5% management fee on collected revenue (Sky Tower negotiated set), then a 70/30 investor/operator split on each year's positive NOI (no loss carry-forward); the investor funds any negative year through a working-capital reserve sized at closing. Returns are pre-tax and unlevered; no residual value is assumed at lease expiry unless the optional business-sale control is switched on.<br><br>
   <b style="color:var(--navy)">Sources.</b> Operator pricing: The Executive Centre, Regus, Cloud Spaces, Servcorp, WeWork x Hub71 public rate cards and Office Hub listings (Aug 2026); Cloud Spaces ADGM page (Sep 2026). Market rents: Cushman &amp; Wakefield Abu Dhabi Mid-Year 2026; Savills Abu Dhabi Q2 2026; Cushman &amp; Wakefield Core listing L-135670 (Sep 2026); ADGM broker channel (Aug 2026). Reem comps: Property Finder, Bayut and Cushman &amp; Wakefield tower guides (Sep 2026); Radiant Square serviced pre-lease guide (Cushman &amp; Wakefield). Cost basis: Sky Tower Floor 38 investment memorandum, August 2026. Broker representations for Leaf Tower L58 (dedicated lift, 50 parking bays, floor 58, 2,500 sqm lettable) are unverified pending title documents and an IPMS survey. Listing: Property Finder 106411896. September 2026. For the intended recipient only.
 </div></footer>
 
 <script>
 try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}
 const SQFT=10.7639;
-const BASE={hr:3000,term:10,rf:6,hesc:0,sc:18,dep:10,capex:550,fit:9,rent:3500,dens:6.5,occ:95,esc:5,split:70,fee:5,exit:0,exitY:7,eff:70};
+const BASE={hr:3000,term:10,rf:7,hesc:5,sc:18,dep:10,capex:550,fit:7,rent:4000,dens:6.5,occ:95,esc:5,split:70,fee:5,exit:0,exitY:7};
 const FIX={area:2500,headEsc:0.05,cont:0.05,vat:0.05,setup:80000,legal:110000,marketing:500000,preopen:2,rampStart:0.60,rampStep:0.05,credit:0.01,
   coreRef:105100,refSqft:23000,payrollShare:53500/105100,opexEsc:0.03,licence:50000,comm:0.10,leaseYears:3};
 let S=Object.assign({},BASE);
@@ -359,9 +372,8 @@ const neg=n=>{n=Math.round(n)||0;return n<0?'('+fmt(-n)+')':fmt(n);};
 
 function render(){
   const R=engine(S), p=S;
-  const suiteArea=FIX.area*p.eff/100;
-  const annualDesk=p.rent*12*R.desks;
-  const perGross=annualDesk/FIX.area, perSuite=annualDesk/suiteArea;
+    const annualDesk=p.rent*12*R.desks;
+  const perGross=annualDesk/FIX.area;
   // controls
   $('vHr').textContent='AED '+fmt(p.hr); $('hHr').textContent='Annual head rent AED '+fmt(R.headRent)+' (AED '+fmt(p.hr/SQFT)+'/sq ft). Landlord ask: AED 7.5M = AED 3,000/sqm (listed since ~2023).';
   $('vRf').textContent=p.rf+' months'; $('hRf').textContent='Rent-free concession worth AED '+fmt(R.headRent*p.rf/12)+'. Fit-out is '+p.fit+' months, so '+Math.max(0,p.fit-p.rf)+' month(s) of rent fall inside the fit-out.';
@@ -371,7 +383,7 @@ function render(){
   $('vDep').textContent=p.dep+'% of Y1 rent'; $('hDep').textContent='AED '+fmt(R.deposit)+' funded at signing, returned at lease expiry.';
   $('vCapex').textContent='AED '+p.capex; $('hCapex').textContent='AED '+fmt(p.capex*SQFT)+'/sqm - total '+fm(R.capex+R.cont)+' incl. 5% contingency, plus '+fm(R.vatCapex)+' VAT recovered in year 1.';
   $('vFit').textContent=p.fit+' months'; $('hFit').textContent='Head rent during fit-out after rent-free '+fm(R.headRent*Math.max(0,p.fit-p.rf)/12)+' - carried by the investor as working capital.';
-  $('vRent').textContent='AED '+fmt(p.rent); $('hRentSqm').textContent='= AED '+fmt(perGross)+'/sqm/yr on lettable floor, AED '+fmt(perSuite)+'/sqm/yr on suite area';
+  $('vRent').textContent='AED '+fmt(p.rent); $('hRentSqm').textContent='= AED '+fmt(perGross)+'/sqm/yr on the lettable floor (AED '+fmt(perGross/SQFT)+'/sq ft), all-inclusive';
   $('hRentSuite').textContent='Reference points: Sky Tower standard AED 3,500 (Rice 3,000); Cloud Spaces desk 3,450; TEC private office ~4,500/pp; Regus Al Maqam ~7,250/pp.';
   $('vDens').textContent=p.dens+' sqm'; $('hDens').textContent=Math.round(R.desks)+' capacity desks on 2,500 sqm lettable (Sky Tower convention 70 sq ft = 6.5 sqm).';
   $('vOcc').textContent=p.occ+'%'; $('vBE').textContent=pct(R.beOcc,0)+' occupancy at AED '+fmt(p.rent)+'/desk (stabilised year).';
@@ -382,17 +394,16 @@ function render(){
   $('vExitY').textContent='end of year '+p.exitY;
   const remain=p.term-p.exitY;
   $('hExit').textContent=p.exit>0?(p.exitY<p.term?'Sale for '+fm(R.exitVal)+' at end of year '+p.exitY+' ('+remain+' years of lease left), split '+p.split+'/'+(100-p.split)+'.':'Sale year must be before lease expiry - no value assumed at term end.'):'Sale of the serviced-office business to another operator (with lease assignment) at a multiple of that year\'s NOI before fee. Off in the base case.';
-  $('vEff').textContent=p.eff+'% - '+fmt(suiteArea)+' sqm of suites';
-  // KPIs
+    // KPIs
   $('kEq').textContent=fm(R.equity); $('dEq').textContent='incl. '+fm(R.wc)+' working capital';
   $('kIrr').textContent=pct(R.irr); $('dIrr').textContent=R.horizon+'-year hold, pre-tax';
   $('kMult').textContent=R.mult.toFixed(2)+'x'; $('dMult').textContent='profit '+fm(R.profit);
   $('kDist').textContent=fm(R.dist); $('dDist').textContent='payback '+(R.payback===null?'beyond term':R.payback.toFixed(1)+' years');
   $('kProj').textContent=pct(R.pirr); $('dProj').textContent=R.pmult.toFixed(2)+'x before fee and split';
   $('kMargin').textContent=pct(R.stabMargin); $('dMargin').textContent='NOI after fee, lease year 3';
-  $('kPsm').textContent='AED '+fmt(perSuite); $('dPsm').textContent='AED '+fmt(perGross)+'/sqm lettable floor';
+  $('kPsm').textContent='AED '+fmt(perGross); $('dPsm').textContent='AED '+fmt(perGross/SQFT)+'/sq ft - lettable floor, all-inclusive';
   // exec summary
-  $('exSum').innerHTML='The rooftop floor of <b>2,500 sqm lettable area</b> (as stated by the landlord, excluding building common areas) at Leaf Tower, Level 58, Al Reem Island (ADGM jurisdiction), with a dedicated lift and 50 parking bays per the broker, offered on a head lease at <b>'+fm(R.headRent)+'</b> a year (AED '+fmt(p.hr)+'/sqm), '+p.term+'-year term, '+p.rf+' months rent-free, '+(p.hesc>0?p.hesc.toFixed(1)+'% escalation':'rent fixed for the term')+'. The plan is to fit the floor out as a premium serviced office of corporate suites and sell it at <b>AED '+fmt(p.rent)+' per desk a month</b>, which is <b>AED '+fmt(perSuite)+' per sqm a year on suite area</b> (AED '+fmt(perGross)+'/sqm on the lettable floor). At '+p.occ+'% stabilised occupancy the floor produces revenue of <b>'+fm(R.stabRev)+'</b> and NOI after fee of <b>'+fm(R.years[Math.min(2,R.years.length-1)].noi_af)+'</b> in lease year 3, a '+pct(R.stabMargin,0)+' margin; head rent and service charge absorb '+pct(R.rentPct,0)+' of revenue.';
+  $('exSum').innerHTML='The rooftop floor of <b>2,500 sqm lettable area</b> (as stated by the landlord, excluding building common areas) at Leaf Tower, Level 58, Al Reem Island (ADGM jurisdiction), with a dedicated lift and 50 parking bays per the broker, offered on a head lease at <b>'+fm(R.headRent)+'</b> a year (AED '+fmt(p.hr)+'/sqm), '+p.term+'-year term, '+p.rf+' months rent-free, '+(p.hesc>0?p.hesc.toFixed(1)+'% escalation':'rent fixed for the term')+'. The plan is to fit the floor out as a premium serviced office of corporate suites and sell it at <b>AED '+fmt(p.rent)+' per desk a month</b>, which is <b>AED '+fmt(perGross)+' per sqm a year on the lettable floor</b> (AED '+fmt(perGross/SQFT)+'/sq ft), all-inclusive. At '+p.occ+'% stabilised occupancy the floor produces revenue of <b>'+fm(R.stabRev)+'</b> and NOI after fee of <b>'+fm(R.years[Math.min(2,R.years.length-1)].noi_af)+'</b> in lease year 3, a '+pct(R.stabMargin,0)+' margin; head rent and service charge absorb '+pct(R.rentPct,0)+' of revenue.';
   $('exSum2').innerHTML='The investor funds the fit-out, deposit and working capital of <b>'+fm(R.equity)+'</b> and receives '+p.split+'% of NOI after a '+p.fee.toFixed(1)+'% management fee: <b>'+pct(R.irr)+' IRR / '+R.mult.toFixed(2)+'x</b> over '+R.horizon+' years with '+(R.exitY?'a business sale in year '+R.exitY:'no residual value at lease expiry')+'. The project itself, before operator terms, returns <b>'+pct(R.pirr)+' / '+R.pmult.toFixed(2)+'x</b>. The operator earns '+fm(R.gpTotal)+' over the term ('+pct(R.gpTotal/(R.gpTotal+R.profit),0)+' of total profit). '+(R.irr!==null&&R.irr<0.12?'Below a 12% hurdle: a lease deal has no exit upside, so the investor return depends on the split, the fit-out ticket and the desk rate - see the sensitivity tables.':'Clears a 12% hurdle on income alone.');
   const yrs=R.years; const y3=yrs[Math.min(2,yrs.length-1)];
   $('exCards').innerHTML=[
@@ -438,8 +449,8 @@ function render(){
   let dh='<tr><th>AED, desk rate / month</th>'+dset.map(r=>'<th>'+fmt(r)+'</th>').join('')+'</tr>';
   const dres=dset.map(r=>engine(Object.assign({},p,{rent:r})));
   const drow=(label,f,cls)=>'<tr'+(cls?' class="'+cls+'"':'')+'><td>'+label+'</td>'+dres.map((R2,i)=>'<td class="'+(dset[i]===p.rent?'base':'')+'">'+f(R2,dset[i])+'</td>').join('')+'</tr>';
-  dh+=drow('Per sqm suite area / yr',(R2,r)=>fmt(r*12*R.desks/suiteArea),'mut');
   dh+=drow('Per sqm lettable floor / yr',(R2,r)=>fmt(r*12*R.desks/FIX.area),'mut');
+  dh+=drow('Per sq ft lettable floor / yr',(R2,r)=>fmt(r*12*R.desks/FIX.area/SQFT),'mut');
   dh+=drow('Stabilised revenue Y3',R2=>fm(R2.years[Math.min(2,R2.years.length-1)].rev).replace('AED ',''));
   dh+=drow('NOI after fee Y3',R2=>fm(R2.years[Math.min(2,R2.years.length-1)].noi_af).replace('AED ',''));
   dh+=drow('NOI margin Y3',R2=>pct(R2.stabMargin,0));
@@ -467,15 +478,14 @@ function render(){
   const irr15=(()=>{let lo=p.rent,hi=p.rent*3;for(let i=0;i<60;i++){const mid=(lo+hi)/2;const v=engine(Object.assign({},p,{rent:mid})).irr;if(v!==null&&v>=0.15)hi=mid;else lo=mid;}return hi;})();
   $('tBreak').innerHTML='<tr><th>Measure</th><th>Value</th></tr>'+[
     ['Break-even occupancy (NOI after fee = 0, year 3)',pct(R.beOcc,0)],['Break-even desk rate at '+p.occ+'% occupancy','AED '+fmt(R.beRate)],
-    ['Desk rate for an 8% investor IRR','AED '+fmt(irr8)+' (AED '+fmt(irr8*12*R.desks/suiteArea)+'/sqm suite)'],['Desk rate for a 15% investor IRR','AED '+fmt(irr15)+' (AED '+fmt(irr15*12*R.desks/suiteArea)+'/sqm suite)'],
+    ['Desk rate for an 8% investor IRR','AED '+fmt(irr8)+' (AED '+fmt(irr8*12*R.desks/FIX.area)+'/sqm floor)'],['Desk rate for a 15% investor IRR','AED '+fmt(irr15)+' (AED '+fmt(irr15*12*R.desks/FIX.area)+'/sqm floor)'],
     ['Bear: rate -300, 85% occ, 3% esc',pct(bear.irr)+' / '+bear.mult.toFixed(2)+'x'],['Base',pct(R.irr)+' / '+R.mult.toFixed(2)+'x'],['Bull: rate +300, 97% occ, 6% esc',pct(bull.irr)+' / '+bull.mult.toFixed(2)+'x']
   ].map(u=>'<tr'+(u[0]==='Base'?' class="hl"':'')+'><td>'+u[0]+'</td><td>'+u[1]+'</td></tr>').join('');
   // pricing
   $('pDesk').textContent='AED '+fmt(p.rent); $('pDeskS').textContent=Math.round(R.desks)+' desks at '+p.dens+' sqm lettable';
-  $('pGross').textContent='AED '+fmt(perGross); $('pSuite').textContent='AED '+fmt(perSuite); $('pSuiteS').textContent='All-inclusive on '+fmt(suiteArea)+' sqm of private suites ('+p.eff+'% efficiency)';
-  $('pSuiteSf').textContent='AED '+fmt(perSuite/SQFT);
-  const list=Math.round(perSuite*1.03/250)*250;
-  $('recoBox').innerHTML='<b>Recommendation.</b> Quote the Leaf Tower product at <b>AED '+fmt(list)+' per sqm a year on suite area, all-inclusive</b> (AED '+fmt(list/SQFT)+'/sq ft), and expect to close between AED '+fmt(Math.round(perSuite*0.93/250)*250)+' and '+fmt(Math.round(perSuite/250)*250)+' after term incentives on 2-5 year agreements with 5% escalation - which is the AED '+fmt(p.rent)+' per desk in this model. On the lettable-floor convention used in the Sky Tower memo that is AED '+fmt(perGross)+'/sqm. Rationale: (1) it sits 20-50% below The Executive Centre and Regus per head on Al Maryah, a 5-minute drive away, with the same ADGM licence; (2) on suite area it is a premium of roughly '+pct(perSuite/6300-1,0)+' over the Radiant Square pre-lease guide (5,990-6,650/sqm) and '+pct(perSuite/5330-1,0)+' over the Sky Tower serviced comps (4,700-5,900/sqm); on the lettable-floor convention it matches the Rice rate card at Sky Tower (AED 3,000/desk incl VAT = ~6,450/sqm), so the rooftop product, private lift and 1:538 sq ft parking must carry the whole premium - price-test with two or three anchor tenants before signing the head lease; (3) it is a premium over the tenant\'s own all-in cost of taking this floor conventionally, which is what flexibility, zero capex and a managed floor are worth. Do not price on the lettable-floor basis with clients - AED '+fmt(perGross)+'/sqm invites a comparison with conventional Reem rents you do not want.<span class="pill">SUITE AREA IS THE QUOTE BASIS</span>';
+  $('pGross').textContent='AED '+fmt(perGross); $('pGrossSf').textContent='AED '+fmt(perGross/SQFT);
+  const list=Math.round(perGross*1.03/250)*250;
+  $('recoBox').innerHTML='<b>Recommendation.</b> Quote the Leaf Tower product at <b>AED '+fmt(list)+' per sqm a year on the lettable floor, all-inclusive</b> (AED '+fmt(list/SQFT)+'/sq ft), and expect to close between AED '+fmt(Math.round(perGross*0.93/250)*250)+' and '+fmt(Math.round(perGross/250)*250)+' after term incentives on 2-5 year agreements with 5% escalation - which is the AED '+fmt(p.rent)+' per desk in this model. Rationale: (1) it sits well below The Executive Centre and Regus per head on Al Maryah, a 5-minute drive away, with the same ADGM licence; (2) it is a premium of roughly '+pct(perGross/6300-1,0)+' over the Radiant Square pre-lease guide (5,990-6,650/sqm) and '+pct(perGross/5330-1,0)+' over the Sky Tower serviced comps (4,700-5,900/sqm), and '+pct(perGross/6458-1,0)+' over the Rice rate card at Sky Tower (AED 3,000/desk = ~6,458/sqm), so the rooftop product, private lift and 1:538 sq ft parking must carry that premium - price-test with two or three anchor tenants before signing the head lease; (3) it is a premium of '+pct(perGross/(p.hr+p.sc*SQFT+p.capex*SQFT/5+900)-1,0)+' over the tenant\'s own all-in cost of taking this floor conventionally, which is what flexibility, zero capex and a managed floor are worth.<span class="pill">LETTABLE FLOOR IS THE QUOTE BASIS</span>';
   const ladder=[
     ['Regus, Al Maqam Tower (ADGM)','Private office, 4 to 50 people','7,248 / person',7248*12/5,'Highest in ADGM; 10% promo applied'],
     ['The Executive Centre, Al Sila Tower (ADGM)','Private office, 4 people AED 18,000','4,500 / person',4500*12/5,'Dedicated desk from 6,000'],
@@ -483,7 +493,7 @@ function render(){
     ['Cloud Spaces, Al Sarab Tower (ADGM)','Premium suite, from 14 sqm','10,350 / suite',10350*12/14,'Closest product to a corporate suite'],
     ['Cloud Spaces, Al Sarab Tower (ADGM)','Dedicated desk','3,450 / desk',null,'Open plan, not a private suite'],
     ['Servcorp, Etihad Towers (mainland)','Private office','6,500 / person',6500*12/5,'Mainland, non-ADGM'],
-    ['The operator, Leaf Tower L58 (this model)','Corporate suites 200-500 sqm, rooftop','<b>'+fmt(p.rent)+' / desk</b>',perSuite,'<b>'+p.eff+'% suite efficiency</b>'],
+    ['The operator, Leaf Tower L58 (this model)','Corporate suites 200-500 sqm, rooftop','<b>'+fmt(p.rent)+' / desk</b>',perGross,'<b>On the lettable floor, all-inclusive</b>'],
     ['Radiant Square, Al Reem (serviced pre-lease)','Private suites 1,100-2,550 sq ft','556-618 / sq ft / yr',6300,'Cushman &amp; Wakefield guide, ex VAT; mid-point shown'],
     ['Sky Tower, Al Reem (serviced comps)','Private office, 1,465-1,769 sq ft','440-551 / sq ft / yr',5330,'Cushman &amp; Wakefield; RICE ~600 incl VAT'],
     ['Sky Tower, Al Reem (Reem operators)','Private office, standard','~3,000 / desk',null,'Rice standard rate'],
@@ -494,7 +504,7 @@ function render(){
   const diy=diyRent+diySc+diyFit+diyOps;
   $('tDiy').innerHTML='<tr><th>Cost line</th><th>AED / sqm / yr</th><th>Basis</th></tr>'+[
     ['Leaf Tower L58 conventional lease at the landlord\'s ask',diyRent,'AED '+fmt(p.hr)+'/sqm; Sky Tower conventional 1,350-2,500'],['Service charge',diySc,'AED '+p.sc+'/sq ft'],['Own fit-out, amortised over 5 years',diyFit,'AED '+p.capex+'/sq ft, no residual'],['Reception, IT, furniture, pantry, cleaning, admin',diyOps,'Operator cost base scaled to the floor']
-  ].map(u=>'<tr><td style="white-space:nowrap">'+u[0]+'</td><td>'+fmt(u[1])+'</td><td style="text-align:left;white-space:normal;color:var(--muted)">'+u[2]+'</td></tr>').join('')+'<tr class="tot"><td>Tenant all-in DIY cost</td><td>'+fmt(diy)+'</td><td></td></tr><tr class="hl"><td>Operator all-inclusive on suite area</td><td>'+fmt(perSuite)+'</td><td style="text-align:left">premium of '+pct(perSuite/diy-1,0)+' for flexibility and zero capex</td></tr>';
+  ].map(u=>'<tr><td style="white-space:nowrap">'+u[0]+'</td><td>'+fmt(u[1])+'</td><td style="text-align:left;white-space:normal;color:var(--muted)">'+u[2]+'</td></tr>').join('')+'<tr class="tot"><td>Tenant all-in DIY cost</td><td>'+fmt(diy)+'</td><td></td></tr><tr class="hl"><td>Operator all-inclusive on the lettable floor</td><td>'+fmt(perGross)+'</td><td style="text-align:left">premium of '+pct(perGross/diy-1,0)+' for flexibility and zero capex</td></tr>';
 }
 function cell(v,base){const t=v===null?'n/a':(Math.round(v*1000)/10||0).toFixed(1)+'%';return '<td class="'+(base?'base ':'')+((v===null||v<0.08)?'neg':'')+'">'+t+'</td>';}
 
@@ -524,7 +534,7 @@ function drawCum(lp){
 }
 
 // wiring
-const sliders={iHr:'hr',iRf:'rf',iHesc:'hesc',iSc:'sc',iDep:'dep',iCapex:'capex',iFit:'fit',iRent:'rent',iDens:'dens',iOcc:'occ',iEsc:'esc',iSplit:'split',iFee:'fee',iExit:'exit',iExitY:'exitY',iEff:'eff'};
+const sliders={iHr:'hr',iRf:'rf',iHesc:'hesc',iSc:'sc',iDep:'dep',iCapex:'capex',iFit:'fit',iRent:'rent',iDens:'dens',iOcc:'occ',iEsc:'esc',iSplit:'split',iFee:'fee',iExit:'exit',iExitY:'exitY'};
 Object.keys(sliders).forEach(id=>{$(id).addEventListener('input',e=>{S[sliders[id]]=parseFloat(e.target.value);render();});});
 document.querySelectorAll('#segTerm button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#segTerm button').forEach(x=>x.classList.remove('on'));b.classList.add('on');S.term=parseInt(b.dataset.v);$('iExitY').max=S.term-1;if(S.exitY>=S.term){S.exitY=S.term-1;$('iExitY').value=S.exitY;}render();}));
 $('btnReset').addEventListener('click',()=>{S=Object.assign({},BASE);Object.keys(sliders).forEach(id=>$(id).value=S[sliders[id]]);document.querySelectorAll('#segTerm button').forEach(x=>x.classList.toggle('on',parseInt(x.dataset.v)===S.term));$('iExitY').max=S.term-1;render();});
